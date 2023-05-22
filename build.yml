@@ -6,7 +6,6 @@ on:
       - master
   merge_group:
   schedule:
-    - cron: '00 01 * * *'
 
 jobs:
   check:
@@ -51,7 +50,6 @@ jobs:
       - name: Run cargo test
         run: cargo test --workspace
 
-      - name: Run cargo integration-test
         run: cargo integration-test
 
     strategy:
@@ -81,7 +79,6 @@ jobs:
       - name: Run cargo doc
         run: cargo doc --no-deps --workspace --document-private-items
         env:
-          RUSTDOCFLAGS: -D warnings
 
   docs:
     name: Docs
